@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="jumbotron">
+  	<h1 class="display-4"><%= @restaurant.name %></h1>
+  	
+  	<p class="lead"><%= @restaurant.category.capitalize %> restaurant</p>
+  	<img class="card-img-top" src="http://lorempicsum.com/futurama/627/300/4" alt="Card image cap">
+  	<hr class="my-4">
+  	
+  	<p>Address: <%= @restaurant.address%><br> Call us: <%= @restaurant.phone_number%></p>
+  	<p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Reserver</a></p>
+  </div>
+</div>
+
+	
