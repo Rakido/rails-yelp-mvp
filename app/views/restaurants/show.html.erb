@@ -8,6 +8,14 @@
   	
   	<p>Address: <%= @restaurant.address%><br> Call us: <%= @restaurant.phone_number%></p>
   	<p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Reserver</a></p>
+    
+    <% @restaurant.reviews.each do |review| %>
+      <%= review.content %>
+      <br>
+      <%= review.rating %> *
+      <br>
+      <br>
+    <% end %>
   </div>
 </div>
 

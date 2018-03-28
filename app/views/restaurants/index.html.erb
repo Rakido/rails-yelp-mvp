@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="head">
-		<h1 class="text-center">Une liste de restos cools</h1><button class="btn btn-primary"><%= link_to 'Add', new_restaurant_path %></button>
+		<h1 class="text-center">Une liste de restos cools</h1><button class="btn btn-default"><%= link_to 'Add', new_restaurant_path %></button>
 	</div>
 	<hr>
 
@@ -20,7 +20,7 @@
 					<small class="text-muted">Phone : <%= restaurant.phone_number %></small>
 					<br>
 					<hr>
-					<a class="btn btn-primary btn-lg" href="#" role="button">Visit</a>
+					<a class="btn btn-default btn-lg" role="button"><%= link_to 'Visit us', restaurant_path(restaurant) %></a>
   			</p>
 			</div>
 		<% end %>

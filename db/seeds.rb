@@ -5,17 +5,25 @@ puts "Cleaning the database"
 puts "...."
 Restaurant.destroy_all
 
-puts 'Creating restaurants...'
+puts 'Creating restaurants and reviews...'
 puts "...."
 
-5.times do Restaurant.create!(
-	
-	name: Faker::RickAndMorty.character,
-	address: Faker::RickAndMorty.location,
-	category: ["chinese", "italian", "japanese", "french", "belgian"].sample,
-	phone_number: Faker::PhoneNumber.phone_number,
-)
+5.times do 
+	restaurant = Restaurant.create!(
+		name: Faker::RickAndMorty.character,
+		address: Faker::RickAndMorty.location,
+		category: ["chinese", "italian", "japanese", "french", "belgian"].sample,
+		phone_number: Faker::PhoneNumber.phone_number,
+	)
+	10.times do 
+		Review.create!(
+			content: Faker::SiliconValley.quote,
+			rating: [1,2,3,4,5].sample,
+			restaurant_id: restaurant.id,
+		)
+	end 
 end 
 
 puts "...."
-puts 'Created restaurants...'
+puts 'Created restaurants and reviews...'
+
